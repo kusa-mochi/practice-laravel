@@ -21,9 +21,12 @@ services:
     build: ./php
     volumes:
       - ./htdocs:/var/www/html
+      - ./setup_middlewares:/tmp/setup_middlewares
+      - ./src:/usr/mochi/sandbox
     restart: always
     ports:
       - "80:80"
+      - "8000:8000"
     depends_on:
       - mysql
 
